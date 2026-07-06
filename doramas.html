@@ -7,63 +7,30 @@
 </head>
 <body>
 
-    <div class="main-wrapper">
-        
-        <!-- Кнопка вызова меню -->
-        <button id="menu-btn" onclick="toggleSidebar()">☰</button>
+    <!-- Кнопка вне сайдбара -->
+    <button id="menu-btn" onclick="toggleSidebar()">☰</button>
 
-        <!-- Боковая панель (сайдбар) -->
-        <aside id="sidebar" class="sidebar">
-            <h3>🔍 Поиск</h3>
-            <input type="text" placeholder="Поиск по названию...">
+    <!-- Сайдбар -->
+    <aside id="sidebar" class="sidebar">
+        <h3 style="margin-top: 40px;">🔍 Поиск</h3>
+        <input type="text" placeholder="Поиск по названию...">
 
-            <div class="filter-group">
-                <button class="dropdown-btn" onclick="toggleDropdown('genres')">ЖАНРЫ ▼</button>
-                <div id="genres" class="dropdown-content">
-                    <a href="#">Гет</a>
-                    <a href="#">BL</a>
-                    <a href="#">Омегаверс</a>
-                    <a href="#">Романтика</a>
-                    <a href="#">Драма</a>
-                    <a href="#">Стекло</a>
-                    <a href="#">Трагедия</a>
-                    <a href="#">Детектив</a>
-                    <a href="#">Эротика</a>
-                    <a href="#">18+</a>
-                    <a href="#">Фэнтези</a>
-                </div>
+        <div class="filter-group">
+            <button class="dropdown-btn" onclick="toggleDropdown('genres')">ЖАНРЫ ▼</button>
+            <div id="genres" class="dropdown-content">
+                <a href="#">Гет</a>
+                <a href="#">BL</a>
+                <a href="#">Романтика</a>
+                <a href="#">Драма</a>
             </div>
+        </div>
+    </aside>
 
-            <div class="filter-group">
-                <button class="dropdown-btn" onclick="toggleDropdown('countries')">СТРАНЫ ▼</button>
-                <div id="countries" class="dropdown-content">
-                    <a href="#">Южная Корея</a>
-                    <a href="#">Китай</a>
-                    <a href="#">Тайвань</a>
-                    <a href="#">Тайланд</a>
-                    <a href="#">Япония</a>
-                </div>
-            </div>
-
-            <div class="filter-group">
-                <button class="dropdown-btn" onclick="toggleDropdown('years')">ГОДА ▼</button>
-                <div id="years" class="dropdown-content">
-                    <a href="#">2026</a>
-                    <a href="#">2025</a>
-                    <a href="#">2024</a>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Основной контент -->
-        <main id="content">
-            <nav id="menu">
-                <a href="index.html" class="nav-link">НАЗАД НА ГЛАВНУЮ</a>
-            </nav>
-            <p style="text-align: center; margin-top: 50px; opacity: 0.7;">Раздел в разработке...</p>
-        </main>
-
-    </div>
+    <!-- Основной контент -->
+    <main class="main-wrapper">
+        <h1>Популярные Дорамы</h1>
+        <p>Раздел в разработке...</p>
+    </main>
 
     <script src="script.js"></script>
 </body>
