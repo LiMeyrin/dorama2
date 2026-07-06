@@ -22,3 +22,14 @@ window.onload = () => {
         });
     }
 };
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('dblclick', function(e) {
+        e.preventDefault(); // Запрещаем переход при двойном клике
+        this.contentEditable = true;
+        this.focus();
+    });
+
+    link.addEventListener('blur', function() {
+        this.contentEditable = false; // Выключаем редактирование, когда уходим с кнопки
+    });
+});
