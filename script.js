@@ -33,3 +33,10 @@ document.querySelectorAll('.nav-link').forEach(link => {
         this.contentEditable = false;
     });
 });
+
+
+// Логика раскрытия боковой панели
+function toggleDropdown(id) {
+    const content = document.getElementById(id);
+    content.classList.toggle('show');
+}
