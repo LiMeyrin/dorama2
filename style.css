@@ -10,71 +10,104 @@ body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     min-height: 100vh;
+    display: block; /* Обязательно блочный режим */
 }
 
-/* Кнопка меню */
+/* Кнопка меню — стильная и всегда видна */
 #menu-btn {
     position: fixed;
     top: 20px;
     left: 20px;
     z-index: 2000;
-    background: transparent;
+    background: rgba(15, 23, 42, 0.8); /* Полупрозрачный фон */
     color: white;
-    border: 1px solid white;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 5px;
     cursor: pointer;
     font-size: 24px;
-    padding: 5px 10px;
+    padding: 5px 12px;
+    transition: background 0.3s;
 }
+#menu-btn:hover { background: rgba(15, 23, 42, 1); }
 
-/* Боковая панель */
+/* Боковая панель — темная, стильная */
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 250px;
-    background: #1a1e26;
+    background: #1a1e26; /* Чуть светлее основного */
     padding: 80px 20px 20px 20px;
     z-index: 1000;
     transition: transform 0.3s ease;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
 }
-
 .sidebar.hidden {
     transform: translateX(-100%);
 }
+.sidebar h3 { color: var(--accent); margin-bottom: 15px; }
 
-/* Основной контент - прижат влево */
+/* Поле поиска */
+.sidebar input {
+    width: 100%;
+    padding: 8px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Основной контент — настроенные отступы, чтобы не слетал */
 .main-wrapper {
-    margin-left: 270px;
+    /* Делаем flex, чтобы заголовок и контент были вместе */
+    display: flex;
+    flex-direction: column;
+    
+    /* Важно: отступ слева = ширина сайдбара + еще немного */
+    margin-left: 270px; 
     padding: 20px;
     text-align: left;
+    min-height: 80vh;
 }
 
-/* Жанры и дропдауны */
-.dropdown-btn { 
-    width: 100%; 
-    background: transparent; 
-    border: none; 
-    color: white; 
-    cursor: pointer; 
-    text-align: left; 
-    font-weight: bold; 
-    margin-top: 15px; 
+/* Заголовок «Дорамы» */
+.main-wrapper h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 20px;
 }
 
-.dropdown-content { 
-    display: none; 
-    flex-direction: column; 
-    padding-top: 10px; 
+/* Стилизация жанров и ссылок (чтобы не были синими) */
+.filter-group { margin-bottom: 10px; }
+.dropdown-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: white; /* Белый текст кнопки */
+    cursor: pointer;
+    text-align: left;
+    font-weight: 600;
+    padding: 5px 0;
+    transition: color 0.3s;
 }
+.dropdown-btn:hover { color: var(--accent); }
 
-.dropdown-content.show { 
-    display: flex; 
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    padding-left: 15px; /* Отступ для списка */
 }
+.dropdown-content.show { display: flex; }
 
+/* Ссылки внутри дропдауна */
 .dropdown-content a {
     color: var(--text-main);
     text-decoration: none;
-    padding: 5px 0;
+    padding: 4px 0;
+    font-size: 14px;
+    transition: opacity 0.3s;
 }
+.dropdown-content a:hover { opacity: 0.7; }
