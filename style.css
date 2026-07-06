@@ -1,0 +1,31 @@
+:root {
+    --accent-color: #ff9aa2; /* Нежный розовый */
+    --bg-color: #fdfcf0;
+}
+
+body { background-color: var(--bg-color); font-family: sans-serif; padding: 20px; }
+
+#menu { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+
+.nav-btn {
+    padding: 10px 20px;
+    border: 2px solid var(--accent-color);
+    background: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nav-btn:hover { background: var(--accent-color); color: white; }
+
+.actions { margin-top: 30px; text-align: center; }
+
+#saveBtn {
+    background: #77dd77;
+    border: none;
+    padding: 15px 30px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
