@@ -14,7 +14,49 @@
     <nav id="menu">
         <a href="index.html" class="nav-link">НАЗАД НА ГЛАВНУЮ</a>
     </nav>
+<div class="main-wrapper"> <!-- Новый родительский блок -->
+    
+    <aside class="sidebar">
+    <h3>🔍 Поиск</h3>
+    <input type="text" placeholder="Поиск по названию...">
 
+    <div class="filter-group">
+        <button class="dropdown-btn" onclick="toggleDropdown('genres')">ЖАНРЫ ▼</button>
+        <div id="genres" class="dropdown-content">
+            <a href="#">Гет</a>
+            <a href="#">BL</a>
+            <a href="#">Омегаверс</a>
+            <a href="#">Романтика</a>
+            <a href="#">Драма</a>
+            <a href="#">Стекло</a>
+            <a href="#">Трагедия</a>
+            <a href="#">Детектив</a>
+            <a href="#">Эротика</a>
+            <a href="#">18+</a>
+            <a href="#">Фентези</a>
+        </div>
+    </div>
+
+    <div class="filter-group">
+        <button class="dropdown-btn" onclick="toggleDropdown('countries')">СТРАНЫ ▼</button>
+        <div id="countries" class="dropdown-content">
+            <a href="#">Южная Корея</a>
+            <a href="#">Китай</a>
+            <a href="#">Тайвань</a>
+            <a href="#">Тайланд</a>
+            <a href="#">Япония</a>
+        </div>
+    </div>
+
+    <div class="filter-group">
+        <button class="dropdown-btn" onclick="toggleDropdown('years')">ГОДА ▼</button>
+        <div id="years" class="dropdown-content">
+            <a href="#">2026</a>
+            <a href="#">2025</a>
+            <a href="#">2024</a>
+            </div>
+    </div>
+    </aside>
     <main id="content">
         <!-- Сюда в будущем мы будем добавлять список твоих дорам -->
         <p style="text-align: center; margin-top: 50px; opacity: 0.7;">Раздел в разработке...</p>
