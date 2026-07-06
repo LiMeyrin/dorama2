@@ -1,28 +1,22 @@
 document.getElementById('saveBtn').addEventListener('click', () => {
-    const buttons = document.querySelectorAll('.nav-btn');
+    const links = document.querySelectorAll('.nav-link');
     const menuData = [];
 
-    buttons.forEach(btn => {
-        menuData.push({
-            text: btn.innerText,
-            link: btn.getAttribute('data-link')
-        });
+    links.forEach(link => {
+        menuData.push({ text: link.innerText });
     });
 
     localStorage.setItem('menuConfig', JSON.stringify(menuData));
-    alert('Изменения сохранены локально!');
+    alert('Настройки сохранены!');
 });
 
-// Загрузка при открытии
 window.onload = () => {
     const saved = localStorage.getItem('menuConfig');
     if (saved) {
         const menuData = JSON.parse(saved);
-        const buttons = document.querySelectorAll('.nav-btn');
+        const links = document.querySelectorAll('.nav-link');
         menuData.forEach((item, index) => {
-            if (buttons[index]) {
-                buttons[index].innerText = item.text;
-            }
+            if (links[index]) links[index].innerText = item.text;
         });
     }
 };
