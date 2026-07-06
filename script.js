@@ -40,3 +40,8 @@ function toggleDropdown(id) {
     const content = document.getElementById(id);
     content.classList.toggle('show');
 }
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('hidden');
+}
