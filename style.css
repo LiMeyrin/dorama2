@@ -12,20 +12,21 @@ body {
     min-height: 100vh;
 }
 
-/* Кнопка меню всегда видна */
+/* Кнопка меню */
 #menu-btn {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1001;
+    z-index: 2000;
     background: transparent;
     color: white;
     border: 1px solid white;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 24px;
+    padding: 5px 10px;
 }
 
-/* Фиксированная боковая панель (как на образце) */
+/* Боковая панель */
 .sidebar {
     position: fixed;
     top: 0;
@@ -33,7 +34,7 @@ body {
     height: 100%;
     width: 250px;
     background: #1a1e26;
-    padding: 20px;
+    padding: 80px 20px 20px 20px;
     z-index: 1000;
     transition: transform 0.3s ease;
     box-shadow: 2px 0 10px rgba(0,0,0,0.5);
@@ -43,13 +44,37 @@ body {
     transform: translateX(-100%);
 }
 
-/* Основной контент не сжимается панелью */
+/* Основной контент - прижат влево */
 .main-wrapper {
-    padding: 20px 20px 20px 80px; /* Отступ слева, чтобы контент не заезжал под кнопку */
+    margin-left: 270px;
+    padding: 20px;
+    text-align: left;
 }
 
-/* Остальные стили */
-header { margin: 20px 0; text-align: center; }
-.dropdown-btn { width: 100%; background: transparent; border: none; color: white; cursor: pointer; text-align: left; font-weight: bold; margin-top: 15px; }
-.dropdown-content { display: none; flex-direction: column; padding-top: 10px; }
-.dropdown-content.show { display: flex; }
+/* Жанры и дропдауны */
+.dropdown-btn { 
+    width: 100%; 
+    background: transparent; 
+    border: none; 
+    color: white; 
+    cursor: pointer; 
+    text-align: left; 
+    font-weight: bold; 
+    margin-top: 15px; 
+}
+
+.dropdown-content { 
+    display: none; 
+    flex-direction: column; 
+    padding-top: 10px; 
+}
+
+.dropdown-content.show { 
+    display: flex; 
+}
+
+.dropdown-content a {
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 5px 0;
+}
