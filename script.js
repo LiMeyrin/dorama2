@@ -1,17 +1,15 @@
-// Сохранение только текста кнопок, чтобы не ломать ссылки
+// 1. Сохранение названий кнопок (при нажатии на кнопку "СОХРАНИТЬ ИЗМЕНЕНИЯ")
 document.getElementById('saveBtn').addEventListener('click', () => {
     const links = document.querySelectorAll('.nav-link');
     const menuData = [];
-
     links.forEach(link => {
         menuData.push({ text: link.innerText });
     });
-
     localStorage.setItem('menuNames', JSON.stringify(menuData));
     alert('Названия кнопок сохранены!');
 });
 
-// Загрузка названий, не трогая ссылки
+// 2. Загрузка названий при открытии сайта
 window.onload = () => {
     const saved = localStorage.getItem('menuNames');
     if (saved) {
@@ -22,14 +20,16 @@ window.onload = () => {
         });
     }
 };
+
+// 3. Редактирование по двойному клику (чтобы не мешать обычным ссылкам)
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('dblclick', function(e) {
-        e.preventDefault(); // Запрещаем переход при двойном клике
+        e.preventDefault(); 
         this.contentEditable = true;
         this.focus();
     });
 
     link.addEventListener('blur', function() {
-        this.contentEditable = false; // Выключаем редактирование, когда уходим с кнопки
+        this.contentEditable = false;
     });
 });
