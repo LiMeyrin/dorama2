@@ -53,3 +53,18 @@ header { margin: 50px 0; letter-spacing: 5px; font-weight: 300; }
 }
 
 #saveBtn:hover { background: white; color: var(--bg-dark); }
+/* Настройки для расположения боковой панели и контента */
+.main-wrapper {
+    display: flex;
+    gap: 20px; /* Расстояние между панелью и списком дорам */
+    padding: 20px;
+    align-items: flex-start; /* Чтобы панель не растягивалась на всю высоту */
+}
+
+.sidebar {
+    flex: 0 0 250px; /* Панель всегда будет шириной 250px и не будет сжиматься */
+}
+
+#content {
+    flex: 1; /* Контент будет занимать всё оставшееся пространство */
+}
