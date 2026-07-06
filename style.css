@@ -9,9 +9,7 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+ 
     min-height: 100vh;
     margin: 0;
 }
@@ -53,14 +51,7 @@ header { margin: 50px 0; letter-spacing: 5px; font-weight: 300; }
 }
 
 #saveBtn:hover { background: white; color: var(--bg-dark); }
-.sidebar {
-    flex: 0 0 250px; /* Отвечает за ширину и фиксацию */
-    width: 250px;
-    background: rgba(255, 255, 255, 0.1); /* Эффект стекла */
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 15px;
-}
+
 .dropdown-content {
     display: none; /* Скрыто по умолчанию */
     flex-direction: column;
@@ -82,12 +73,6 @@ header { margin: 50px 0; letter-spacing: 5px; font-weight: 300; }
     margin-top: 15px;
 }
 /* Настройки для расположения боковой панели и контента */
-.main-wrapper {
-    display: flex;
-    gap: 20px; /* Расстояние между панелью и списком дорам */
-    padding: 20px;
-    align-items: flex-start; /* Чтобы панель не растягивалась на всю высоту */
-}
 
 
 
