@@ -1,31 +1,55 @@
 :root {
-    --accent-color: #ff9aa2; /* Нежный розовый */
-    --bg-color: #fdfcf0;
+    --bg-dark: #0f172a;
+    --glass: rgba(255, 255, 255, 0.05);
+    --text-main: #f8fafc;
+    --accent: #6366f1; /* Стильный индиго */
 }
 
-body { background-color: var(--bg-color); font-family: sans-serif; padding: 20px; }
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
 
-#menu { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+header { margin: 50px 0; letter-spacing: 5px; font-weight: 300; }
 
-.nav-btn {
-    padding: 10px 20px;
-    border: 2px solid var(--accent-color);
-    background: white;
+#menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 900px;
+}
+
+.nav-link {
+    background: var(--glass);
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.4s;
+    text-align: center;
+}
+
+.nav-link:hover {
+    background: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+#saveBtn {
+    margin-top: 50px;
+    background: transparent;
+    border: 1px solid var(--text-main);
+    color: white;
+    padding: 10px 25px;
     cursor: pointer;
-    border-radius: 8px;
     transition: 0.3s;
 }
 
-.nav-btn:hover { background: var(--accent-color); color: white; }
-
-.actions { margin-top: 30px; text-align: center; }
-
-#saveBtn {
-    background: #77dd77;
-    border: none;
-    padding: 15px 30px;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-}
+#saveBtn:hover { background: white; color: var(--bg-dark); }
